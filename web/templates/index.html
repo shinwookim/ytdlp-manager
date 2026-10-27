@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>YTDLP Download Manager</title>
+        <link rel="stylesheet" href="/static/pico.jade.min.css" />
+        <link rel="stylesheet" href="/static/styles.css" />
+        <script src="/static/app.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>Download Manager</h1>
+                <p>Manage your yt-dlp downloads.</p>
+            </header>
+
+            <form id="add-form">
+                <label for="url">Video URL</label>
+                <input
+                    id="url"
+                    name="url"
+                    type="url"
+                    placeholder="https://www.youtube.com/watch?v=..."
+                    required
+                />
+
+                <label for="mode">Download format</label>
+                <select id="mode" name="mode">
+                    <option value="video">Video</option>
+                    <option value="audio">Audio (MP3)</option>
+                </select>
+
+                <button type="submit">Add download</button>
+                <p id="notice" role="status" aria-live="polite"></p>
+            </form>
+
+            <section>
+                <h2>Jobs</h2>
+                <button id="clear" type="submit">Clear Finished Jobs</button>
+                <div id="jobs" aria-live="polite">
+                    <p>Loading jobs…</p>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
